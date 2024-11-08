@@ -10,6 +10,7 @@ function NavBar() {
                 <li ><NavLink style={({ isActive }) => { return { color: isActive ? "greenyellow" : "black" } }} className="nav-bar-link" to={'/'}> Home</NavLink></li>
                 <li ><NavLink style={({ isActive }) => { return { color: isActive ? "greenyellow" : "black" } }} className="nav-bar-link" to={'/users/sandeep'}> Sandy</NavLink></li>
                 <li ><NavLink style={({ isActive }) => { return { color: isActive ? "greenyellow" : "black" } }} className="nav-bar-link" to={'/filter'}> Filter</NavLink></li>
+                <li ><NavLink style={({ isActive }) => { return { color: isActive ? "greenyellow" : "black" } }} className="nav-bar-link" to={'/login'}> Login</NavLink></li>
             </ul>
 
         </div>
