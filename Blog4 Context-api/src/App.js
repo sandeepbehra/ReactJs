@@ -1,28 +1,73 @@
 import logo from './logo.svg';
 import './App.css';
-import { useState } from 'react';
+import './index.css'
+import { Component, useState } from 'react';
 import User from './User';
+import { CommonContext } from './Contexts/CommonContext';
+import Main from './Contexts/Main';
+import Header from './Contexts/Header';
+import Footer from './Contexts/Footer';
+import UpdateButton from './Contexts/UpdateButton';
+
+class App extends Component {
+
+    constructor(){
+        super()
+        this.updateColor = () => {
+            this.setState({ color: "green" });
+        }
+        this.state = { color: "red", updateColor: this.updateColor, name: "sandeep" };
+
+    }
 
 
+    render() {
+        return (
+
+            <CommonContext.Provider value={this.state}>
+               <Header></Header>
+                <h1>Apps from provider</h1>
+                <Main></Main>
+                <UpdateButton></UpdateButton>
+                <Footer></Footer>
+            </CommonContext.Provider>
+
+        )
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+// ---------------------------------------71 state with object---------------------
 // function App()
 // {
- 
+
 //   const[data,setdata] = useState({name: "Sandeep", age : 25 })
 
 //   return(
 //     <div className='App'>
-    
-    {/*  problem */}
 
-    {/* <input type='text' value={data.name} onChange={(e)=>setdata({name:e.target.value})}></input><br></br><br></br>
+{/*  problem */ }
+
+{/* <input type='text' value={data.name} onChange={(e)=>setdata({name:e.target.value})}></input><br></br><br></br>
     <input type='text' value={data.age} onChange={(e)=>setdata({age:e.target.value})}></input><br></br><br></br> */}
 
-    {/* Solution 1st */}
+{/* Solution 1st */ }
 
 {/* <input type='text' value={data.name} onChange={(e)=>setdata({age:data.age,name:e.target.value})}></input><br></br><br></br>
 <input type='text' value={data.age} onChange={(e)=>setdata({name:data.name,age:e.target.value})}></input><br></br><br></br> */}
 
-    {/* Solution 3 */}
+{/* Solution 3 */ }
 
 {/* <input type='text' value={data.name} onChange={(e)=>setdata({...data, name:e.target.value})}></input><br></br><br></br>
     <input type='text' value={data.age} onChange={(e)=>setdata({...data, age:e.target.value})}></input><br></br><br></br>
